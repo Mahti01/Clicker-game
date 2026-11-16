@@ -50,7 +50,18 @@
 .mine .w1,.mine .w2,.mine .w3,.mine .w4,.mine .w5,.mine .w6{z-index:4}
 .mine .w1{left:31%;bottom:28%}.mine .w2{right:39%;bottom:26%}
 .mine .click{z-index:10}
-</style></style>
+<style id="exactMineReference">
+/* Exact reference image is the mine home-screen surface. Keep game logic and bottom tabs. */
+#app{position:relative;background:#06111b}
+.top{display:none}
+.mine{position:absolute;inset:0;padding:0;background-image:url("assets/mine-reference.webp");background-size:100% 100%;background-position:center;background-repeat:no-repeat;z-index:1}
+.mine>*:not(#mineBtn){display:none!important}
+#mineBtn{display:block!important;position:absolute;left:15.6%;bottom:6.5%;width:42%;height:12%;transform:none;padding:0;background:transparent;box-shadow:none;border:0;color:transparent;font-size:0;z-index:20}
+#mineBtn:active{transform:none;box-shadow:none}
+.bottom{position:absolute;left:0;right:0;bottom:0;z-index:50}
+.bottom .tab{background:#0b2a45e8;border-color:#3a7ea4aa}
+.settingsBtn{position:absolute;right:10px;top:10px;z-index:60;opacity:.9}
+</style></style></style>
 </head>
 <body>
 <div id="app"><header class="top"><div class="brand">💎 АЛМАЗНАЯ ИМПЕРИЯ<small>MINING TYCOON</small></div><div style="display:flex;align-items:center;gap:10px"><button class="settingsBtn" id="settingsBtn" aria-label="Настройки">⚙️</button><div class="wallet"><span id="diamonds">0</span> 💎<small><span id="rate">0</span> 💎/сек</small><div class="cash">₽ <span id="money">0</span></div></div></div></header>
