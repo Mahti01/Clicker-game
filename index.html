@@ -65,12 +65,18 @@
 .panel{position:absolute;z-index:5;left:10px;right:10px;top:48px;bottom:12px;overflow:auto;background:#0c1721f5;border:1px solid #ffffff14;border-radius:18px;padding:14px;backdrop-filter:blur(10px);display:none}.panel.show{display:block}.panel h2{margin:0 0 4px;font-size:18px}.panel p{margin:0 0 12px;color:#748896;font-size:11px}.item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #ffffff0d}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#132936;font-size:22px}.itemmain{flex:1}.name{font-weight:900;font-size:13px}.desc{display:block;color:#7f919d;font-size:10px;margin-top:3px}.buy{padding:9px 12px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.buy:disabled{opacity:.3}.sell{margin-top:10px;width:100%;padding:13px;border-radius:12px;background:linear-gradient(180deg,#d8b66b,#a77c32);color:#171109;font-weight:900}.sell:disabled{opacity:.35}.market{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.marketbox{padding:12px;border-radius:12px;background:#13232e;border:1px solid #ffffff10}.marketbox b{display:block;font-size:16px}.marketbox span{font-size:9px;color:#7e929f}.unlock{margin-top:16px;padding:12px;border-radius:14px;background:#101f29;border:1px solid #ffffff10}.unlock h3{margin:0 0 4px;font-size:14px}.unlock p{margin:0 0 10px;font-size:10px;color:#7f919d}.unlock button{width:100%;padding:11px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.unlock button:disabled{opacity:.3}.progress{margin-top:16px;padding:12px;border-radius:14px;background:#101f29;border:1px solid #ffffff10}.progress h3{margin:0 0 8px;font-size:14px}.milestone{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px solid #ffffff0d;font-size:10px;color:#7f919d}.milestone:first-of-type{border-top:0}.milestone b{margin-left:auto;font-size:9px}.milestone.done{color:#9fefff}.milestone.done b{color:#8fe8ff}.orders{margin-top:16px;padding:12px;border-radius:14px;background:#101f29;border:1px solid #ffffff10}.orders h3{margin:0 0 4px;font-size:14px}.order{padding:10px 0;border-top:1px solid #ffffff0d}.order:first-child{border-top:0}.orderline{display:flex;justify-content:space-between;gap:8px;font-size:11px}.order button{margin-top:8px;width:100%;padding:10px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.storage{margin-top:12px;padding:12px;border-radius:14px;background:#101f29;border:1px solid #ffffff10}.storagebar{height:8px;margin-top:8px;border-radius:99px;background:#071018;overflow:hidden}.storagefill{height:100%;width:0;background:#1689c4;transition:width .2s}.infra{margin-top:16px;padding:12px;border-radius:14px;background:#101f29;border:1px solid #ffffff10}.infra h3{margin:0 0 4px;font-size:14px}.infra p{margin:0 0 10px;font-size:10px;color:#7f919d}.infra button{width:100%;padding:11px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.infra button:disabled{opacity:.3}
 .bottom{padding:9px 10px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;background:#070e14;border-top:1px solid #ffffff10}.tab{padding:9px 4px;border-radius:12px;background:#111d27;color:#8395a2;font-size:10px;font-weight:800}.tab b{display:block;font-size:18px;margin-bottom:2px}.tab.active{background:#12394c;color:#91edff}
 .order button.insufficient{opacity:.8;background:#3b2b22;border:1px solid #76543d;color:#ffd7b0}.order button.insufficient:disabled{cursor:not-allowed}.upgradeGroup{margin-top:14px}.upgradeGroup h3{margin:0 0 8px;color:#9bdcf0;font-size:13px;text-transform:uppercase;letter-spacing:.6px}.upgradeGrid{display:grid;grid-template-columns:1fr;gap:8px}.upgradeGrid .item{margin:0}@media(min-width:700px){.upgradeGrid{grid-template-columns:1fr 1fr}}.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal.show{display:flex}.modalbox{width:min(420px,100%);background:#0d1c26;border:1px solid #294757;border-radius:18px;padding:18px;box-shadow:0 20px 60px #000b}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:10px}.modalhead h2{margin:0}.settingRow{margin-top:18px;padding:15px;border:1px solid #294757;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:12px}.settingRow span{display:block;color:#8195a3;font-size:11px;margin-top:5px}.toggle{min-width:72px;padding:10px;border-radius:10px;background:#164b5e;color:#bff5ff;font-weight:900}.danger{width:100%;margin-top:18px;padding:13px;border-radius:11px;background:#54252a;color:#ffd9dc;font-weight:900}.hint{color:#718493;font-size:10px;margin:10px 2px 0}.mineArtwork{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-.mineScene>.mineGlow,.mineScene>.mineTitle,.mineScene>.mineCrystal,.mineScene>.crystalSmall,.mineScene>.mineEntrance,.mineScene>.visual{display:none!important}
-.mineScene{background:#0b1d29!important}
+.mineScene{left:14px;right:255px;top:58px;bottom:78px;border:2px solid #244b61;border-radius:24px;background:#0b1d29!important;box-shadow:inset 0 0 45px #0008,0 12px 30px #0007}
 .mineScene:before,.mineScene:after{display:none!important}
+.mineScene>.mineGlow,.mineScene>.mineTitle,.mineScene>.mineCrystal,.mineScene>.crystalSmall,.mineScene>.mineEntrance,.mineScene>.visual{display:none!important}
+.mineAside{right:14px;top:58px;width:225px;bottom:78px;gap:12px}
+.mineCard{padding:18px 16px;border:2px solid #244b61;border-radius:22px;background:linear-gradient(145deg,#102c3cdf,#0a1b27ef);box-shadow:inset 0 0 25px #0005,0 10px 25px #0007}
+.mineCard .cardTitle{font-size:17px;color:#dce9ef;font-weight:900}
+.mineCard b{font-size:30px;color:#fff}.mineCard .cardSub{font-size:12px;color:#c1d0d8}
+.mineCard .bar{height:9px;margin-top:12px}.mineCard .bar i{background:linear-gradient(90deg,#17c8ef,#75eeff);box-shadow:0 0 10px #36dfff88}
+.click{bottom:6%;width:min(62vw,420px);font-size:18px;z-index:50}
 .mine .worker{display:none!important}
-.mineAside{z-index:30}
-.click{z-index:40}
+@media(max-width:900px){.mineScene{right:205px}.mineAside{width:180px}}
+@media(max-width:700px){.mineScene{left:10px;right:10px;top:54px;bottom:125px}.mineAside{right:16px;top:auto;bottom:135px;width:145px}.mineCard{padding:8px}.mineCard .cardTitle{font-size:10px}.mineCard b{font-size:15px}.click{width:min(78vw,340px);font-size:16px}}
 </style>
 </head>
 <body>
@@ -79,50 +85,50 @@
 <main class="mine" id="mine">
 <div class="sky"></div><div class="stars"></div><div class="mountain"></div><div class="ground"></div><div class="mineScene"><svg class="mineArtwork" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs>
- <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#173b52"/><stop offset="1" stop-color="#081a27"/></linearGradient>
- <linearGradient id="rockG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#617286"/><stop offset=".45" stop-color="#35495a"/><stop offset="1" stop-color="#172833"/></linearGradient>
- <linearGradient id="woodG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9a6637"/><stop offset=".5" stop-color="#604027"/><stop offset="1" stop-color="#2e2119"/></linearGradient>
- <linearGradient id="diamondG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5ffff"/><stop offset=".22" stop-color="#7cecff"/><stop offset=".52" stop-color="#20bde9"/><stop offset=".82" stop-color="#0870b3"/><stop offset="1" stop-color="#d5fbff"/></linearGradient>
- <filter id="glow"><feGaussianBlur stdDeviation="12"/></filter>
+ <linearGradient id="s" x2="0" y2="1"><stop stop-color="#183c54"/><stop offset=".58" stop-color="#0b2332"/><stop offset="1" stop-color="#08151e"/></linearGradient>
+ <linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#687b8d"/><stop offset=".42" stop-color="#43586a"/><stop offset="1" stop-color="#253744"/></linearGradient>
+ <linearGradient id="w" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b27a42"/><stop offset=".45" stop-color="#714827"/><stop offset="1" stop-color="#38271b"/></linearGradient>
+ <linearGradient id="d" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".18" stop-color="#9af2ff"/><stop offset=".5" stop-color="#2bc7f1"/><stop offset=".78" stop-color="#0879bd"/><stop offset="1" stop-color="#d8fbff"/></linearGradient>
+ <filter id="b"><feGaussianBlur stdDeviation="14"/></filter>
+ <filter id="sh"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-opacity=".55"/></filter>
 </defs>
-<rect width="1000" height="600" fill="url(#skyG)"/>
-<circle cx="740" cy="285" r="150" fill="#20d9ff" opacity=".14" filter="url(#glow)"/>
-<g opacity=".35" fill="#d9f7ff"><circle cx="90" cy="92" r="2"/><circle cx="170" cy="55" r="2"/><circle cx="310" cy="92" r="1.5"/><circle cx="520" cy="60" r="2"/><circle cx="820" cy="80" r="2"/><circle cx="930" cy="150" r="1.5"/></g>
-<path d="M0 430 L110 330 205 410 330 265 445 390 560 290 670 405 785 260 900 385 1000 305 V600 H0Z" fill="#263d4c"/>
-<path d="M0 470 L100 395 200 470 315 330 420 445 545 345 665 460 790 340 900 455 1000 390 V600 H0Z" fill="#182c38"/>
-<g fill="#234d37" stroke="#172f27" stroke-width="5">
- <path d="M88 380 l-32 70 h20 l-36 58 h38 l-26 48 h72 l-26-48 h38 l-36-58 h20z"/>
- <path d="M875 365 l-34 72 h21 l-38 60 h40 l-28 51 h76 l-28-51 h40 l-38-60 h21z"/>
- <path d="M940 405 l-25 55 h16 l-29 48 h31 l-21 40 h59 l-21-40 h31 l-29-48 h16z"/>
+<rect width="1000" height="600" fill="url(#s)"/>
+<g opacity=".28" fill="#e4fbff"><circle cx="80" cy="80" r="2"/><circle cx="150" cy="55" r="1.5"/><circle cx="300" cy="100" r="2"/><circle cx="505" cy="62" r="1.5"/><circle cx="720" cy="92" r="2"/><circle cx="910" cy="72" r="1.5"/></g>
+<ellipse cx="765" cy="330" rx="175" ry="155" fill="#39ddff" opacity=".18" filter="url(#b)"/>
+<path d="M0 430 105 330 205 405 315 285 430 390 545 285 660 400 775 275 900 385 1000 305V600H0Z" fill="#344b5b"/>
+<path d="M0 480 105 405 200 475 320 340 430 455 545 350 665 470 790 350 900 460 1000 390V600H0Z" fill="#203743"/>
+<g fill="#315b40" stroke="#1a3529" stroke-width="5">
+<path d="M95 360 62 435h20l-36 55h37l-26 50h76l-26-50h37l-36-55h20z"/>
+<path d="M895 350 860 430h21l-39 58h41l-28 50h80l-28-50h41l-39-58h21z"/>
+<path d="M960 390 936 445h15l-28 45h30l-21 38h58l-21-38h30l-28-45h15z"/>
 </g>
-<path d="M300 470 Q420 360 515 330 Q625 300 735 355 L835 470 Z" fill="url(#rockG)" stroke="#263a49" stroke-width="8"/>
-<path d="M355 430 Q430 325 515 315 Q590 310 655 375 L705 470 H350Z" fill="#465b6c"/>
-<path d="M385 432 Q435 350 505 345 Q575 345 625 410 L650 470 H370Z" fill="#111d25"/>
-<path d="M365 445 H645" stroke="#8a5a31" stroke-width="20"/>
-<path d="M390 410 H620 M405 378 H600" stroke="#6d472b" stroke-width="10"/>
-<g fill="url(#woodG)" stroke="#2b1e17" stroke-width="6">
- <path d="M120 430 L145 180 H190 L165 430Z"/><path d="M270 430 L245 180 H290 L315 430Z"/>
- <path d="M132 205 H300 L288 235 H128Z"/><path d="M175 180 L255 180 L215 115Z"/>
+<g filter="url(#sh)">
+<path d="M290 490Q350 350 500 300Q635 275 760 375L850 500Z" fill="url(#m)" stroke="#2d4250" stroke-width="10"/>
+<path d="M350 455Q410 350 500 325Q590 315 670 380L720 490H325Z" fill="#526879"/>
+<path d="M382 455Q435 365 505 355Q575 350 635 415L665 490H360Z" fill="#121e25"/>
 </g>
-<circle cx="214" cy="245" r="48" fill="#a16a35" stroke="#3b2719" stroke-width="10"/>
-<circle cx="214" cy="245" r="10" fill="#e5b76c"/>
-<g stroke="#3b2719" stroke-width="8"><path d="M214 205V285 M174 245H254 M186 217L242 273 M242 217L186 273"/></g>
-<path d="M155 430 L410 520" stroke="#aeb8bc" stroke-width="8"/><path d="M190 412 L445 505" stroke="#707b81" stroke-width="8"/>
-<g stroke="#59656b" stroke-width="10"><path d="M175 430L168 446"/><path d="M215 445L208 461"/><path d="M255 460L248 476"/><path d="M295 474L288 490"/><path d="M335 488L328 504"/><path d="M375 502L368 518"/></g>
-<g transform="translate(365 455)">
- <rect x="0" y="0" width="92" height="48" rx="8" fill="#604126" stroke="#241b16" stroke-width="7"/>
- <path d="M10 0 L18 -35 H78 L86 0Z" fill="#8c6035" stroke="#241b16" stroke-width="6"/>
- <circle cx="17" cy="53" r="12" fill="#1c252a" stroke="#9da8ab" stroke-width="5"/><circle cx="77" cy="53" r="12" fill="#1c252a" stroke="#9da8ab" stroke-width="5"/>
- <g fill="#59dcff"><path d="M28 5 l13-22 13 22z"/><path d="M48 5 l12-25 14 25z"/></g>
+<g fill="url(#w)" stroke="#2c1f16" stroke-width="7">
+<path d="M120 450 150 185h48l-26 265z"/><path d="M285 450 255 185h48l30 265z"/>
+<path d="M132 205h170v34H128z"/><path d="M170 185h95l-48-62z"/>
 </g>
-<g transform="translate(720 330)">
- <ellipse cx="0" cy="115" rx="105" ry="25" fill="#48dfff" opacity=".25" filter="url(#glow)"/>
- <path d="M0 0 L55 30 82 90 43 150 0 170 -45 150 -82 90 -55 30Z" fill="url(#diamondG)" stroke="#c8fbff" stroke-width="6"/>
- <path d="M0 0 L0 170 M-55 30 L43 150 M55 30 L-43 150 M-82 90 L82 90" fill="none" stroke="#e9ffff" stroke-width="4" opacity=".8"/>
- <path d="M0 0 L55 30 0 70 -55 30Z" fill="#efffff" opacity=".6"/>
+<circle cx="214" cy="265" r="50" fill="#b27a42" stroke="#392619" stroke-width="11"/>
+<circle cx="214" cy="265" r="10" fill="#f1c47a"/>
+<g stroke="#432b1b" stroke-width="8"><path d="M214 218v94M167 265h94M181 232l66 66M247 232l-66 66"/></g>
+<g fill="#e8a75c"><rect x="146" y="270" width="8" height="60"/><rect x="290" y="270" width="8" height="60"/></g>
+<path d="M365 460h280" stroke="#aeb8bd" stroke-width="9"/><path d="M375 480h280" stroke="#69767c" stroke-width="9"/>
+<g stroke="#5c686e" stroke-width="10"><path d="M390 450v24M430 450v24M470 450v24M510 450v24M550 450v24M590 450v24M630 450v24"/></g>
+<g transform="translate(440 430)">
+<rect x="0" y="0" width="100" height="55" rx="8" fill="#65452b" stroke="#261c15" stroke-width="7"/>
+<path d="M10 0 20-35h60l10 35z" fill="#9a6739" stroke="#261c15" stroke-width="7"/>
+<circle cx="18" cy="59" r="13" fill="#20292d" stroke="#b1b9bc" stroke-width="5"/><circle cx="82" cy="59" r="13" fill="#20292d" stroke="#b1b9bc" stroke-width="5"/>
+<g fill="#61e4ff"><path d="M26 3 40-22 54 3z"/><path d="M48 3 63-28 78 3z"/></g></g>
+<g transform="translate(745 335)">
+<ellipse cx="0" cy="132" rx="112" ry="28" fill="#42ddff" opacity=".38" filter="url(#b)"/>
+<path d="M0 0 58 34 86 92 45 154 0 178-46 154-86 92-58 34z" fill="url(#d)" stroke="#d9fdff" stroke-width="7"/>
+<path d="M0 0v178M-58 34l103 120M58 34l-104 120M-86 92H86M-58 34 0 76l58-42" fill="none" stroke="#f0ffff" stroke-width="4" opacity=".88"/>
 </g>
-<g fill="url(#diamondG)" stroke="#c8fbff" stroke-width="4"><path d="M640 450 l20-55 25 55-22 35z"/><path d="M830 460 l22-65 28 65-25 37z"/><path d="M675 485 l14-38 17 38-15 26z"/></g>
-<g fill="#dffaff"><circle cx="705" cy="365" r="3"/><circle cx="775" cy="390" r="2"/><circle cx="850" cy="420" r="3"/></g>
+<g fill="url(#d)" stroke="#d8fdff" stroke-width="4"><path d="M650 490 675 425 704 490 679 528z"/><path d="M835 492 860 415 893 492 865 535z"/><path d="M705 520 720 475 742 520 723 550z"/></g>
+<g opacity=".8" fill="#f4ffff"><circle cx="700" cy="365" r="3"/><circle cx="810" cy="390" r="2"/><circle cx="875" cy="430" r="3"/></g>
 </svg><div class="mineGlow"></div><div class="mineTitle">АЛМАЗНАЯ ШАХТА<span>ДОБЫЧА И РАЗВИТИЕ</span></div><div class="mineCrystal"></div><div class="crystalSmall cs1"></div><div class="crystalSmall cs2"></div><div class="crystalSmall cs3"></div><div class="mineEntrance"></div><div class="visual"><div class="support"></div><div class="rails"></div><div class="cart">🛒</div><div class="ore ore1">💎</div><div class="ore ore2">💎</div><div class="hut"><div class="chimney"></div></div><div class="smoke">☁️</div><div class="crane"></div><div class="warehouse"></div></div></div><div class="mineAside"><div class="mineCard"><span class="cardTitle">Уровень шахты</span><b id="mineLevelCard">1</b><span class="cardSub" id="mineProgressText">0 / 1 000 💎</span><div class="bar"><i id="mineProgressBar" style="width:0%"></i></div></div><div class="mineCard"><span class="cardTitle">Добыча</span><b>+<span id="rateCard">0</span> 💎 / сек</b><span class="cardSub">Автоматическая добыча</span></div><div class="mineCard"><span class="cardTitle">Склад</span><b id="storageCard">0 / 500</b><div class="bar"><i id="storageProgressBar" style="width:0%"></i></div></div></div><div class="worker w1">👷</div><div class="worker w2">👷</div><div class="worker w3">👷</div><div class="worker w4">👷</div><div class="worker w5">👷</div><div class="worker w6">👷</div>
 <div class="info"><div class="level">ШАХТА <b id="mineLevel">1</b></div><div class="income">ДОХОД <b>+<span id="rate2">0</span>/сек</b></div></div>
 <button class="click" id="mineBtn">⛏ ДОБЫТЬ АЛМАЗ</button>
