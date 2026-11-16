@@ -54,7 +54,16 @@ function render(){
 $("#diamonds").textContent=fmt(state.diamonds);$("#money").textContent=fmt(state.money);$("#marketDiamonds").textContent=fmt(state.diamonds)+" 💎";$("#rate").textContent=fmt(state.rate);$("#rate2").textContent=fmt(state.rate);$("#mineLevel").textContent=state.mineLevel;
 $("#mine").className="mine level"+Math.min(state.mineLevel,20)+" workers"+Math.min(state.workers,5);
 $("#upgrades").innerHTML='<h2>⚒️ Улучшения</h2><p>Увеличивай силу добычи.</p>'+upgrades.map((u,i)=>{let c=upgradeCost(i);return '<div class="item"><div class="icon">'+u.icon+'</div><div class="itemmain"><div class="name">'+u.name+'</div><span class="desc">'+u.desc+'</span></div><button class="buy" data-up="'+i+'" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>'}).join("");
-let c=workerCost();$("#workers").innerHTML='<h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p><div class="item"><div class="icon">👷</div><div class="itemmain"><div class="name">Шахтёр ×'+state.workers+'</div><span class="desc">Каждый даёт +1 💎/сек</span></div><button class="buy" id="buyWorker" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>';
+let c=workerCost();$("#workers").innerHTML='<h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p><div class="item"><div class="icon">👷</div><div class="itemmain"><div class="name">Шахтёр ×'+state.workers+'</div><span class="desc">Каждый даёт +1 💎/сек</span></div><button class="buy" id="buyWorker" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>;
+const sellPrice=state.transport?20:state.plant?15:10;
+$("#priceBox").textContent=sellPrice+" ₽ / 💎";
+$("#sellBtn").textContent="💰 ПРОДАТЬ 10 АЛМАЗОВ — "+(sellPrice*10)+" ₽";
+const buildings=[
+{name:"Буровая установка",icon:"🛢️",desc:"+5 💎/сек. Появляется на территории шахты.",cost:1000,key:"drill"},
+{name:"Перерабатывающий цех",icon:"🏭",desc:"Цена продажи увеличивается до 15 ₽ за 💎.",cost:5000,key:"plant"},
+{name:"Транспортный терминал",icon:"🚚",desc:"Цена продажи увеличивается до 20 ₽ за 💎.",cost:10000,key:"transport"}
+];
+$("#buildings").innerHTML=buildings.map(b=>'<div class="item"><div class="icon">'+b.icon+'</div><div class="itemmain"><div class="name">'+b.name+'</div><span class="desc">'+b.desc+'</span></div><button class="buy" data-build="'+b.key+'" '+((state[b.key]||state.money<b.cost)?'disabled':'')+'>'+((state[b.key])?"КУПЛЕНО":fmt(b.cost)+" ₽")+'</button></div>').join("");';
 }
 $("#mineBtn").addEventListener("click",e=>{state.diamonds+=state.click;const f=document.createElement("div");f.className="float";f.textContent="+"+fmt(state.click)+" 💎";f.style.left=(e.clientX-20)+"px";f.style.top=(e.clientY-20)+"px";$("#mine").appendChild(f);setTimeout(()=>f.remove(),850);render();save()});
 document.addEventListener("click",e=>{
