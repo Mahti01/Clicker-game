@@ -35,7 +35,7 @@
 <button class="click" id="mineBtn">⛏ ДОБЫТЬ АЛМАЗ</button>
 <section class="panel" id="upgrades"><h2>⚒️ Улучшения</h2><p>Увеличивай силу добычи.</p></section>
 <section class="panel" id="workers"><h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p></section>
-<section class="panel" id="market"><h2>💰 Рынок</h2><p>Продавай добытые алмазы и развивай империю.</p><div class="market"><div class="marketbox"><span>АЛМАЗЫ</span><b id="marketDiamonds">0 💎</b></div><div class="marketbox"><span>ЦЕНА</span><b>10 ₽ / 💎</b></div></div><button class="sell" id="sellBtn">💰 ПРОДАТЬ 10 АЛМАЗОВ — 100 ₽</button><div class="infra"><h3>🏗️ Буровая установка</h3><p>Стоимость: 1 000 ₽ · Даёт +5 💎/сек. Покупается один раз.</p><button id="buyDrill">🛢️ КУПИТЬ БУРОВУЮ — 1 000 ₽</button></div></section>
+<section class="panel" id="market"><h2>💰 Рынок</h2><p>Продавай добытые алмазы и развивай империю.</p><div class="market"><div class="marketbox"><span>АЛМАЗЫ</span><b id="marketDiamonds">0 💎</b></div><div class="marketbox"><span>ЦЕНА</span><b>100 ₽ / 100 💎</b></div></div><button class="sell" id="sellBtn">💰 ПРОДАТЬ 100 АЛМАЗОВ — 100 ₽</button><div class="infra"><h3>🏗️ Буровая установка</h3><p>Стоимость: 1 000 ₽ · Даёт +5 💎/сек. Покупается один раз.</p><button id="buyDrill">🛢️ КУПИТЬ БУРОВУЮ — 1 000 ₽</button></div></section>
 </main>
 <nav class="bottom"><button class="tab active" data-panel=""><b>💎</b>Шахта</button><button class="tab" data-panel="upgrades"><b>⚒️</b>Улучшения</button><button class="tab" data-panel="workers"><b>👷</b>Рабочие</button><button class="tab" data-panel="market"><b>💰</b>Рынок</button></nav>
 </div>
@@ -60,7 +60,7 @@ document.addEventListener("click",e=>{
 let u=e.target.closest("[data-up]");if(u){let i=+u.dataset.up,c=upgradeCost(i);if(state.diamonds>=c){state.diamonds-=c;state.click+=upgrades[i].add;state.upgradeLevel++;state.mineLevel=Math.max(state.mineLevel,1+state.upgradeLevel);render();save()}}
 if(e.target.id==="buyPump"){let pc=Math.floor(500*Math.pow(2.2,state.pumpLevel));if(state.diamonds>=pc){state.diamonds-=pc;state.pumpLevel++;state.rate+=3;state.mineLevel=Math.max(state.mineLevel,3+state.pumpLevel);render();save()}}
 if(e.target.id==="buyWorker"){let c=workerCost();if(state.diamonds>=c){state.diamonds-=c;state.workers++;state.rate++;state.mineLevel=Math.max(state.mineLevel,1+Math.floor(state.workers*1.5));render();save()}}
-if(e.target.id==="sellBtn"){if(state.diamonds>=10){state.diamonds-=10;state.money+=100;render();save()}}
+if(e.target.id==="sellBtn"){if(state.diamonds>=100){state.diamonds-=100;state.money+=100;render();save()}}
 if(e.target.id==="buyDrill"){if(!state.drill&&state.money>=1000){state.money-=1000;state.drill=true;state.rate+=5;state.mineLevel=Math.max(state.mineLevel,6);render();save()}}
 let tab=e.target.closest(".tab");if(tab){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));tab.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("show"));if(tab.dataset.panel)$("#"+tab.dataset.panel).classList.add("show")}}
 );
