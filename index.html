@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071018;color:#fff}button{font:inherit;border:0;cursor:pointer}
 #app{height:100%;display:flex;flex-direction:column;background:linear-gradient(180deg,#0b1722,#081018)}
-.top{padding:12px 14px 8px;display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-weight:900;font-size:15px;letter-spacing:.4px}.brand small{display:block;margin-top:3px;color:#718493;font-size:9px;letter-spacing:2px}.wallet{text-align:right;font-weight:900;font-size:18px}.wallet small{display:block;color:#7d909e;font-size:9px;margin-top:2px}
+.top{padding:12px 14px 8px;display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-weight:900;font-size:15px;letter-spacing:.4px}.brand small{display:block;margin-top:3px;color:#718493;font-size:9px;letter-spacing:2px}.wallet{text-align:right;font-weight:900;font-size:18px}.wallet small{display:block;color:#7d909e;font-size:9px;margin-top:2px}.cash{color:#f2d38b;font-size:12px;margin-top:2px}
 .mine{position:relative;flex:1;overflow:hidden}.sky{position:absolute;inset:0;background:radial-gradient(circle at 50% 25%,#294458 0,#142635 43%,#09131b 100%)}.stars{position:absolute;inset:0;opacity:.45;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:47px 43px}
 .mountain{position:absolute;bottom:-8%;left:-10%;width:120%;height:67%;background:linear-gradient(160deg,#33424b,#1a252d 65%);clip-path:polygon(0 100%,0 59%,13% 46%,26% 58%,39% 35%,53% 57%,68% 40%,83% 54%,100% 43%,100% 100%)}.ground{position:absolute;bottom:0;width:100%;height:28%;background:linear-gradient(#26343b,#10191f);clip-path:polygon(0 18%,20% 5%,43% 18%,64% 7%,100% 20%,100% 100%,0 100%);opacity:.95}
 .rock{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);width:min(47vw,220px);height:min(42vw,195px);background:linear-gradient(145deg,#667781,#303e47 55%,#141e25);clip-path:polygon(50% 2%,86% 21%,98% 60%,76% 94%,31% 100%,5% 63%,14% 25%);filter:drop-shadow(0 20px 18px #0009)}
@@ -19,13 +19,13 @@
 .info{position:absolute;left:14px;right:14px;top:8px;display:flex;justify-content:space-between;align-items:center}.level{background:#0d1b26cc;border:1px solid #ffffff12;border-radius:12px;padding:8px 10px;font-size:10px;color:#91a5b4}.level b{color:#fff;font-size:12px}.income{background:#0d1b26cc;border:1px solid #ffffff12;border-radius:12px;padding:8px 10px;font-size:10px;color:#8fe8ff}
 .click{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);width:min(82vw,330px);padding:16px;border-radius:16px;background:linear-gradient(180deg,#20b8ed,#0877b2);box-shadow:0 7px 0 #07547b,0 14px 32px #0008;color:#fff;font-weight:900;font-size:17px}.click:active{transform:translateX(-50%) translateY(5px);box-shadow:0 2px 0 #07547b}
 .float{position:absolute;pointer-events:none;font-weight:900;color:#b7f7ff;text-shadow:0 2px 10px #000;animation:float .85s ease-out forwards}@keyframes float{to{transform:translateY(-80px) scale(1.1);opacity:0}}
-.panel{position:absolute;z-index:5;left:10px;right:10px;top:48px;bottom:12px;overflow:auto;background:#0c1721f5;border:1px solid #ffffff14;border-radius:18px;padding:14px;backdrop-filter:blur(10px);display:none}.panel.show{display:block}.panel h2{margin:0 0 4px;font-size:18px}.panel p{margin:0 0 12px;color:#748896;font-size:11px}.item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #ffffff0d}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#132936;font-size:22px}.itemmain{flex:1}.name{font-weight:900;font-size:13px}.desc{display:block;color:#7f919d;font-size:10px;margin-top:3px}.buy{padding:9px 12px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.buy:disabled{opacity:.3}
-.bottom{padding:9px 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#070e14;border-top:1px solid #ffffff10}.tab{padding:9px 4px;border-radius:12px;background:#111d27;color:#8395a2;font-size:10px;font-weight:800}.tab b{display:block;font-size:18px;margin-bottom:2px}.tab.active{background:#12394c;color:#91edff}
+.panel{position:absolute;z-index:5;left:10px;right:10px;top:48px;bottom:12px;overflow:auto;background:#0c1721f5;border:1px solid #ffffff14;border-radius:18px;padding:14px;backdrop-filter:blur(10px);display:none}.panel.show{display:block}.panel h2{margin:0 0 4px;font-size:18px}.panel p{margin:0 0 12px;color:#748896;font-size:11px}.item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #ffffff0d}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#132936;font-size:22px}.itemmain{flex:1}.name{font-weight:900;font-size:13px}.desc{display:block;color:#7f919d;font-size:10px;margin-top:3px}.buy{padding:9px 12px;border-radius:10px;background:#1689c4;color:#fff;font-weight:900;font-size:11px}.buy:disabled{opacity:.3}.sell{margin-top:10px;width:100%;padding:13px;border-radius:12px;background:linear-gradient(180deg,#d8b66b,#a77c32);color:#171109;font-weight:900}.sell:disabled{opacity:.35}.market{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.marketbox{padding:12px;border-radius:12px;background:#13232e;border:1px solid #ffffff10}.marketbox b{display:block;font-size:16px}.marketbox span{font-size:9px;color:#7e929f}
+.bottom{padding:9px 10px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#070e14;border-top:1px solid #ffffff10}.tab{padding:9px 4px;border-radius:12px;background:#111d27;color:#8395a2;font-size:10px;font-weight:800}.tab b{display:block;font-size:18px;margin-bottom:2px}.tab.active{background:#12394c;color:#91edff}
 </style>
 </head>
 <body>
 <div id="app">
-<header class="top"><div class="brand">💎 АЛМАЗНАЯ ИМПЕРИЯ<small>MINING TYCOON</small></div><div class="wallet"><span id="diamonds">0</span> 💎<small><span id="rate">0</span> 💎/сек</small></div></header>
+<header class="top"><div class="brand">💎 АЛМАЗНАЯ ИМПЕРИЯ<small>MINING TYCOON</small></div><div class="wallet"><span id="diamonds">0</span> 💎<small><span id="rate">0</span> 💎/сек</small><div class="cash">₽ <span id="money">0</span></div></div></header>
 <main class="mine" id="mine">
 <div class="sky"></div><div class="stars"></div><div class="mountain"></div><div class="ground"></div>
 <div class="visual"><div class="support"></div><div class="rails"></div><div class="cart">🛒</div><div class="ore ore1">💎</div><div class="ore ore2">💎</div><div class="hut"><div class="chimney"></div></div><div class="smoke">☁️</div><div class="crane"></div><div class="warehouse"></div></div>
@@ -35,11 +35,12 @@
 <button class="click" id="mineBtn">⛏ ДОБЫТЬ АЛМАЗ</button>
 <section class="panel" id="upgrades"><h2>⚒️ Улучшения</h2><p>Увеличивай силу добычи.</p></section>
 <section class="panel" id="workers"><h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p></section>
+<section class="panel" id="market"><h2>💰 Рынок</h2><p>Продавай добытые алмазы и развивай империю.</p><div class="market"><div class="marketbox"><span>АЛМАЗЫ</span><b id="marketDiamonds">0 💎</b></div><div class="marketbox"><span>ЦЕНА</span><b>10 ₽ / 💎</b></div></div><button class="sell" id="sellBtn">💰 ПРОДАТЬ 10 АЛМАЗОВ — 100 ₽</button></section>
 </main>
-<nav class="bottom"><button class="tab active" data-panel=""><b>💎</b>Шахта</button><button class="tab" data-panel="upgrades"><b>⚒️</b>Улучшения</button><button class="tab" data-panel="workers"><b>👷</b>Рабочие</button></nav>
+<nav class="bottom"><button class="tab active" data-panel=""><b>💎</b>Шахта</button><button class="tab" data-panel="upgrades"><b>⚒️</b>Улучшения</button><button class="tab" data-panel="workers"><b>👷</b>Рабочие</button><button class="tab" data-panel="market"><b>💰</b>Рынок</button></nav>
 </div>
 <script>
-const state={diamonds:0,click:1,rate:0,upgradeLevel:0,workers:0,mineLevel:1};
+const state={diamonds:0,money:0,click:1,rate:0,upgradeLevel:0,workers:0,mineLevel:1};
 const upgrades=[{name:"Крепкая кирка",desc:"+1 к добыче за клик",base:25,add:1,icon:"⛏️"},{name:"Стальная кирка",desc:"+5 к добыче за клик",base:150,add:5,icon:"🔨"},{name:"Алмазный бур",desc:"+25 к добыче за клик",base:1000,add:25,icon:"⚙️"}];
 const $=s=>document.querySelector(s);
 function fmt(n){return n<1000?Math.floor(n):n<1e6?(n/1e3).toFixed(1)+"K":n<1e9?(n/1e6).toFixed(1)+"M":(n/1e9).toFixed(1)+"B"}
@@ -48,7 +49,7 @@ function load(){try{Object.assign(state,JSON.parse(localStorage.getItem("diamond
 function upgradeCost(i){return Math.floor(upgrades[i].base*Math.pow(3.2,Math.max(0,state.upgradeLevel-i)))}
 function workerCost(){return Math.floor(100*Math.pow(1.65,state.workers))}
 function render(){
-$("#diamonds").textContent=fmt(state.diamonds);$("#rate").textContent=fmt(state.rate);$("#rate2").textContent=fmt(state.rate);$("#mineLevel").textContent=state.mineLevel;
+$("#diamonds").textContent=fmt(state.diamonds);$("#money").textContent=fmt(state.money);$("#marketDiamonds").textContent=fmt(state.diamonds)+" 💎";$("#rate").textContent=fmt(state.rate);$("#rate2").textContent=fmt(state.rate);$("#mineLevel").textContent=state.mineLevel;
 $("#mine").className="mine level"+Math.min(state.mineLevel,20)+" workers"+Math.min(state.workers,5);
 $("#upgrades").innerHTML='<h2>⚒️ Улучшения</h2><p>Увеличивай силу добычи.</p>'+upgrades.map((u,i)=>{let c=upgradeCost(i);return '<div class="item"><div class="icon">'+u.icon+'</div><div class="itemmain"><div class="name">'+u.name+'</div><span class="desc">'+u.desc+'</span></div><button class="buy" data-up="'+i+'" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>'}).join("");
 let c=workerCost();$("#workers").innerHTML='<h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p><div class="item"><div class="icon">👷</div><div class="itemmain"><div class="name">Шахтёр ×'+state.workers+'</div><span class="desc">Каждый даёт +1 💎/сек</span></div><button class="buy" id="buyWorker" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>';
@@ -57,6 +58,7 @@ $("#mineBtn").addEventListener("click",e=>{state.diamonds+=state.click;const f=d
 document.addEventListener("click",e=>{
 let u=e.target.closest("[data-up]");if(u){let i=+u.dataset.up,c=upgradeCost(i);if(state.diamonds>=c){state.diamonds-=c;state.click+=upgrades[i].add;state.upgradeLevel++;state.mineLevel=Math.max(state.mineLevel,1+state.upgradeLevel);render();save()}}
 if(e.target.id==="buyWorker"){let c=workerCost();if(state.diamonds>=c){state.diamonds-=c;state.workers++;state.rate++;state.mineLevel=Math.max(state.mineLevel,1+Math.floor(state.workers*1.5));render();save()}}
+if(e.target.id==="sellBtn"){if(state.diamonds>=10){state.diamonds-=10;state.money+=100;render();save()}}
 let tab=e.target.closest(".tab");if(tab){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));tab.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("show"));if(tab.dataset.panel)$("#"+tab.dataset.panel).classList.add("show")}}
 );
 setInterval(()=>{if(state.rate){state.diamonds+=state.rate;render()}},1000);setInterval(save,5000);load();render();
