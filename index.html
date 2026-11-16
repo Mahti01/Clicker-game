@@ -54,7 +54,8 @@ function buildCost(base){return Math.max(1,Math.floor(base*Math.max(.7,1-state.e
 function marketPrice(){let cycle=Math.floor(Date.now()/30000)%3;return (cycle===0?80:cycle===1?100:120)+(state.processing?50:0)}
 function marketDemand(){let cycle=Math.floor(Date.now()/30000)%3;return cycle===0?"НИЗКИЙ СПРОС":cycle===1?"СТАБИЛЬНЫЙ СПРОС":"ВЫСОКИЙ СПРОС"}
 function marketEvent(){let cycle=Math.floor(Date.now()/60000)%4;return cycle===0?{title:"📉 Перепроизводство",text:"Алмазов слишком много. Цена снижена.",delta:-20}:cycle===1?{title:"⚖️ Стабильный рынок",text:"Спрос и предложение сбалансированы.",delta:0}:cycle===2?{title:"📈 Дефицит алмазов",text:"Запасы на рынке заканчиваются. Цена растёт.",delta:30}:{title:"🚢 Большой заказ",text:"Крупный покупатель вышел на рынок.",delta:15}}
-function marketEventPrice(){return marketPrice()+marketEvent().delta}\nfunction salePrice(){return Math.floor(marketEventPrice()*(state.trading?1.1:1))}
+function marketEventPrice(){return marketPrice()+marketEvent().delta}
+function salePrice(){return Math.floor(marketEventPrice()*(state.trading?1.1:1))}
 function reputation(){let p=Math.floor(state.totalSold/1000);return p>=50?{name:"💎 Легенда",points:p}:p>=20?{name:"👑 Магнат",points:p}:p>=10?{name:"🤝 Партнёр",points:p}:p>=5?{name:"⭐ Надёжный",points:p}:{name:"🌱 Новичок",points:p}}
 function contractReward(base){return Math.floor(base*(1+Math.min(.2,state.loaders*.02)))}
 function render(){
