@@ -40,7 +40,7 @@
 <nav class="bottom"><button class="tab active" data-panel=""><b>💎</b>Шахта</button><button class="tab" data-panel="upgrades"><b>⚒️</b>Улучшения</button><button class="tab" data-panel="workers"><b>👷</b>Рабочие</button><button class="tab" data-panel="market"><b>💰</b>Рынок</button></nav>
 </div>
 <script>
-const state={diamonds:0,money:0,click:1,rate:0,upgradeLevel:0,workers:0,mineLevel:1,drill:false};
+const state={diamonds:0,money:0,click:1,rate:0,upgradeLevel:0,workers:0,mineLevel:1,drill:false,pumpLevel:0};
 const upgrades=[{name:"Крепкая кирка",desc:"+1 к добыче за клик",base:25,add:1,icon:"⛏️"},{name:"Стальная кирка",desc:"+5 к добыче за клик",base:150,add:5,icon:"🔨"},{name:"Алмазный бур",desc:"+25 к добыче за клик",base:1000,add:25,icon:"⚙️"}];
 const $=s=>document.querySelector(s);
 function fmt(n){return n<1000?Math.floor(n):n<1e6?(n/1e3).toFixed(1)+"K":n<1e9?(n/1e6).toFixed(1)+"M":(n/1e9).toFixed(1)+"B"}
@@ -52,11 +52,13 @@ function render(){
 $("#diamonds").textContent=fmt(state.diamonds);$("#money").textContent=fmt(state.money);$("#marketDiamonds").textContent=fmt(state.diamonds)+" 💎";$("#rate").textContent=fmt(state.rate);$("#rate2").textContent=fmt(state.rate);$("#mineLevel").textContent=state.mineLevel;
 $("#mine").className="mine level"+Math.min(state.mineLevel,20)+" workers"+Math.min(state.workers,5);
 $("#upgrades").innerHTML='<h2>⚒️ Улучшения</h2><p>Увеличивай силу добычи.</p>'+upgrades.map((u,i)=>{let c=upgradeCost(i);return '<div class="item"><div class="icon">'+u.icon+'</div><div class="itemmain"><div class="name">'+u.name+'</div><span class="desc">'+u.desc+'</span></div><button class="buy" data-up="'+i+'" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>'}).join("");
+let pc=Math.floor(500*Math.pow(2.2,state.pumpLevel));$("#upgrades").innerHTML+='<div class="item"><div class="icon">⚙️</div><div class="itemmain"><div class="name">Компрессор ×'+state.pumpLevel+'</div><span class="desc">+3 💎/сек к пассивной добыче</span></div><button class="buy" id="buyPump" '+(state.diamonds<pc?'disabled':'')+'>'+fmt(pc)+' 💎</button></div>';
 let c=workerCost();$("#workers").innerHTML='<h2>👷 Рабочие</h2><p>Автоматизируй добычу.</p><div class="item"><div class="icon">👷</div><div class="itemmain"><div class="name">Шахтёр ×'+state.workers+'</div><span class="desc">Каждый даёт +1 💎/сек</span></div><button class="buy" id="buyWorker" '+(state.diamonds<c?'disabled':'')+'>'+fmt(c)+' 💎</button></div>';
 }
 $("#mineBtn").addEventListener("click",e=>{state.diamonds+=state.click;const f=document.createElement("div");f.className="float";f.textContent="+"+fmt(state.click)+" 💎";f.style.left=(e.clientX-20)+"px";f.style.top=(e.clientY-20)+"px";$("#mine").appendChild(f);setTimeout(()=>f.remove(),850);render();save()});
 document.addEventListener("click",e=>{
 let u=e.target.closest("[data-up]");if(u){let i=+u.dataset.up,c=upgradeCost(i);if(state.diamonds>=c){state.diamonds-=c;state.click+=upgrades[i].add;state.upgradeLevel++;state.mineLevel=Math.max(state.mineLevel,1+state.upgradeLevel);render();save()}}
+if(e.target.id==="buyPump"){let pc=Math.floor(500*Math.pow(2.2,state.pumpLevel));if(state.diamonds>=pc){state.diamonds-=pc;state.pumpLevel++;state.rate+=3;state.mineLevel=Math.max(state.mineLevel,3+state.pumpLevel);render();save()}}
 if(e.target.id==="buyWorker"){let c=workerCost();if(state.diamonds>=c){state.diamonds-=c;state.workers++;state.rate++;state.mineLevel=Math.max(state.mineLevel,1+Math.floor(state.workers*1.5));render();save()}}
 if(e.target.id==="sellBtn"){if(state.diamonds>=10){state.diamonds-=10;state.money+=100;render();save()}}
 if(e.target.id==="buyDrill"){if(!state.drill&&state.money>=1000){state.money-=1000;state.drill=true;state.rate+=5;state.mineLevel=Math.max(state.mineLevel,6);render();save()}}
