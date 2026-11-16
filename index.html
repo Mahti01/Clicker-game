@@ -58,7 +58,8 @@ $("#mineBtn").addEventListener("click",e=>{state.diamonds+=state.click;const f=d
 document.addEventListener("click",e=>{
 let u=e.target.closest("[data-up]");if(u){let i=+u.dataset.up,c=upgradeCost(i);if(state.diamonds>=c){state.diamonds-=c;state.click+=upgrades[i].add;state.upgradeLevel++;state.mineLevel=Math.max(state.mineLevel,1+state.upgradeLevel);render();save()}}
 if(e.target.id==="buyWorker"){let c=workerCost();if(state.diamonds>=c){state.diamonds-=c;state.workers++;state.rate++;state.mineLevel=Math.max(state.mineLevel,1+Math.floor(state.workers*1.5));render();save()}}
-if(e.target.id==="sellBtn"){if(state.diamonds>=10){state.diamonds-=10;state.money+=100;render();save()}}\nif(e.target.id==="buyDrill"){if(!state.drill&&state.money>=1000){state.money-=1000;state.drill=true;state.rate+=5;state.mineLevel=Math.max(state.mineLevel,6);render();save()}}
+if(e.target.id==="sellBtn"){if(state.diamonds>=10){state.diamonds-=10;state.money+=100;render();save()}}
+if(e.target.id==="buyDrill"){if(!state.drill&&state.money>=1000){state.money-=1000;state.drill=true;state.rate+=5;state.mineLevel=Math.max(state.mineLevel,6);render();save()}}
 let tab=e.target.closest(".tab");if(tab){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));tab.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("show"));if(tab.dataset.panel)$("#"+tab.dataset.panel).classList.add("show")}}
 );
 setInterval(()=>{if(state.rate){state.diamonds+=state.rate;render()}},1000);setInterval(save,5000);load();render();
