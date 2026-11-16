@@ -61,7 +61,8 @@ let u=e.target.closest("[data-up]");if(u){let i=+u.dataset.up,c=upgradeCost(i);i
 if(e.target.id==="buyPump"){let pc=Math.floor(500*Math.pow(2.2,state.pumpLevel));if(state.diamonds>=pc){state.diamonds-=pc;state.pumpLevel++;state.rate+=3;state.mineLevel=Math.max(state.mineLevel,3+state.pumpLevel);render();save()}}
 if(e.target.id==="buyWorker"){let c=workerCost();if(state.diamonds>=c){state.diamonds-=c;state.workers++;state.rate++;state.mineLevel=Math.max(state.mineLevel,1+Math.floor(state.workers*1.5));render();save()}}
 if(e.target.id==="sellBtn"){if(state.diamonds>=100){state.diamonds-=100;state.money+=state.processing?150:100;render();save()}}
-if(e.target.id==="buyStorage"){let sc=1000*Math.pow(2,state.storageLevel);if(state.money>=sc){state.money-=sc;state.storageLevel++;state.mineLevel=Math.max(state.mineLevel,4+state.storageLevel);render();save()}}\nif(e.target.id==="buyProcessing"){if(!state.processing&&state.money>=5000){state.money-=5000;state.processing=true;state.mineLevel=Math.max(state.mineLevel,10);render();save()}}
+if(e.target.id==="buyStorage"){let sc=1000*Math.pow(2,state.storageLevel);if(state.money>=sc){state.money-=sc;state.storageLevel++;state.mineLevel=Math.max(state.mineLevel,4+state.storageLevel);render();save()}}
+if(e.target.id==="buyProcessing"){if(!state.processing&&state.money>=5000){state.money-=5000;state.processing=true;state.mineLevel=Math.max(state.mineLevel,10);render();save()}}
 if(e.target.id==="buyDrill"){if(!state.drill&&state.money>=1000){state.money-=1000;state.drill=true;state.rate+=5;state.mineLevel=Math.max(state.mineLevel,6);render();save()}}
 let tab=e.target.closest(".tab");if(tab){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));tab.classList.add("active");document.querySelectorAll(".panel").forEach(x=>x.classList.remove("show"));if(tab.dataset.panel)$("#"+tab.dataset.panel).classList.add("show")}}
 );
